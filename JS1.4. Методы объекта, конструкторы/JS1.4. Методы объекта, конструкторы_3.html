@@ -1,0 +1,100 @@
+<script type="text/javascript">
+
+// Объект "Пользователи"
+const users = [
+  {
+    id: 1,
+    name: "Иван",
+    age: 25,
+    email: "ivan@example.com",
+  },
+  {
+    id: 2,
+    name: "Алексей",
+    age: 30,
+    email: "alex@example.com",
+  },
+  {
+    id: 3,
+    name: "Мария",
+    age: 28,
+    email: "maria@example.com",
+  },
+];
+
+// Объект "Заказы"
+const orders = [
+  {
+    id: 1,
+    userId: 1,
+    items: ["Пицца", "Напиток"],
+    totalPrice: 25,
+  },
+  {
+    id: 2,
+    userId: 2,
+    items: ["Салат", "Десерт"],
+    totalPrice: 15,
+  },
+  {
+    id: 3,
+    userId: 3,
+    items: ["Стейк", "Вино"],
+    totalPrice: 40,
+  },
+];
+
+// Объект "Рестораны"
+const restaurants = [
+  {
+    id: 1,
+    name: "Ресторан 1",
+    address: "ул. Пушкина, д.10",
+  },
+  {
+    id: 2,
+    name: "Ресторан 2",
+    address: "ул. Ленина, д.5",
+  },
+];
+
+// Вывод информации по условию
+function printInformation() {
+  // Вывод информации о пользователях
+  document.write("Информация о пользователях:", " <br />");
+  users.forEach(user => {
+    document.write(`ID: ${user.id}`, " <br />");
+    document.write(`Имя: ${user.name}`, " <br />");
+    document.write(`Возраст: ${user.age}`, " <br />");
+    document.write(`Email: ${user.email}`, " <br />");
+    document.write("--------------------", " <br />", " <br />");
+  });
+
+  // Вывод информации о заказах
+  document.write("Информация о заказах:", " <br />");
+  orders.forEach(order => {
+    const user = users.find(user => user.id === order.userId);
+    const restaurant = restaurants.find(restaurant => restaurant.id === order.restaurantId);
+
+    document.write(`ID заказа: ${order.id}`, " <br />");
+    document.write(`Пользователь: ${user ? user.name : "Неизвестный пользователь"}`, " <br />");
+    document.write(`Заказанные товары: ${order.items.join(", ")}`, " <br />");
+    document.write(`Общая стоимость: ${order.totalPrice}`, " <br />");
+    document.write(`Ресторан: ${restaurant ? restaurant.name : "Неизвестный ресторан"}`, " <br />");
+    document.write("--------------------", " <br />", " <br />");
+  });
+
+  // Вывод информации о ресторанах
+  document.write("Информация о ресторанах:", " <br />");
+  restaurants.forEach(restaurant => {
+    document.write(`ID ресторана: ${restaurant.id}`, " <br />");
+    document.write(`Название: ${restaurant.name}`, " <br />");
+    document.write(`Адрес: ${restaurant.address}`, " <br />");
+    document.write("--------------------", " <br />");
+  });
+}
+
+// Вызов функции для вывода информации
+printInformation();
+
+</script>
