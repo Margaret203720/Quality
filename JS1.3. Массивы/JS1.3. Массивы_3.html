@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+function calculateStatistics(array) {
+  let positiveSum = 0;
+  let positiveCount = 0;
+  let negativeSum = 0;
+  let negativeCount = 0;
+  let zeroCount = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      positiveSum += array[i];
+      positiveCount++;
+    } else if (array[i] < 0) {
+      negativeSum += array[i];
+      negativeCount++;
+    } else {
+      zeroCount++;
+    }
+  }
+
+  const positiveAverage = positiveCount > 0 ? positiveSum / positiveCount : 0;
+  const negativeAverage = negativeCount > 0 ? negativeSum / negativeCount : 0;
+
+  return {
+    positiveAverage,
+    negativeAverage,
+    zeroCount,
+  };
+}
+
+// Заданный массив чисел
+const array = [2, 5, -3, 0, -8, 1, 0, 4, -2, 7];
+
+document.write("Исходный массив:", array, " <br />");
+
+// Расчет статистики
+const statistics = calculateStatistics(array, " <br />");
+
+document.write("Среднее арифметическое положительных чисел:", statistics.positiveAverage, " <br />");
+document.write("Среднее арифметическое отрицательных чисел:", statistics.negativeAverage, " <br />");
+document.write("Количество нулей:", statistics.zeroCount);
+
+
+</script>
