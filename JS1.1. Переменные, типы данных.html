@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+    var chislo = prompt("Введи число:");
+    alert("Введено число " + chislo);
+
+    var a = prompt("Введи число a:");
+    var b = prompt("Введи число b:");
+    c1 = a + b;
+    c2 = a - b;
+    c3 = a * b;
+    c4 = a / b;
+    alert("c1 = " + c1 + " c2 = " + c2 + " c3 = " + c3 + " c4 = " + c4);
+
+    var zagaday_chislo = prompt("Задумай число:");
+    rez = zagaday_chislo * 2;
+    rez = rez + 7;
+    prompt("Результат = " + rez);
+    alert("Задуманное число равно " + zagaday_chislo);
+
+    var name1 = prompt("Назови свое имя: ");
+    var year = prompt("Год рождения: ");
+    var tekgod = gettime();
+    vozrast = timestampdiff(YEAR, tekgod, year);
+    if (year%10 == 1) {
+        document.write(name1 + ": " + vozrast + " год");
+    } else if (year%10 >= 2 && year%10 <= 4) {
+        document.write(name1 + ": " + vozrast + " года");
+    } else if (year%10 >= 5) {
+        document.write(name1 + ": " + vozrast + " лет");
+    }
+    
+</script>
