@@ -29,4 +29,13 @@
         document.write(name1 + ": " + vozrast + " лет");
     }
     
+    let name = prompt("Введите ваше имя:");
+    let birthYear = prompt("Введите год вашего рождения:");
+
+    // Вычисляем возраст пользователя
+    let currentYear = new Date().getFullYear();
+    let age = currentYear - birthYear;
+
+    // Выводим результат на страницу
+    document.write(`${name}: ${age}`);
 </script>
