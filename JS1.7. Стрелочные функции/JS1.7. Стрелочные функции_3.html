@@ -1,0 +1,26 @@
+<script type="text/javascript">
+
+const isSurnamePalindrome = (surname) => {
+  // Удаляем все пробелы и приводим фамилию к нижнему регистру
+  surname = surname.replace(/\s/g, '').toLowerCase();
+
+  // Перебираем символы фамилии
+  for (let i = 0; i < Math.floor(surname.length / 2); i++) {
+    // Сравниваем символы с обоих концов фамилии
+    if (surname[i] !== surname[surname.length - 1 - i]) {
+      return false; // Если символы не совпадают, фамилия не является палиндромом
+    }
+  }
+
+  return true; // Если все символы совпадают, фамилия является палиндромом
+};
+
+// Пример использования
+const surname1 = "Kokoreva";
+document.write(isSurnamePalindrome(surname1), "<br>"); // false
+
+const surname2 = "Macam";
+document.write(isSurnamePalindrome(surname2)); // true
+
+
+</script>
