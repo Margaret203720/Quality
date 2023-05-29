@@ -1,0 +1,41 @@
+<script type="text/javascript">
+
+const checkTaskCondition = function(taskNumber) {
+  switch (taskNumber) {
+    case 1:
+      return checkTask1Condition();
+    case 2:
+      return checkTask2Condition();
+    case 3:
+      return checkTask3Condition();
+    default:
+      return "Условие для задания не найдено.";
+  }
+};
+
+const checkTask1Condition = function() {
+  // Реализация проверки условия для задания 1
+  // Возвращаем результат проверки
+  return true;
+};
+
+const checkTask2Condition = function() {
+  // Реализация проверки условия для задания 2
+  // Возвращаем результат проверки
+  return false;
+};
+
+const checkTask3Condition = function() {
+  // Реализация проверки условия для задания 3
+  // Возвращаем результат проверки
+  return true;
+};
+
+// Пример использования
+document.write(checkTaskCondition(1), "<br>"); // true
+document.write(checkTaskCondition(2), "<br>"); // false
+document.write(checkTaskCondition(3), "<br>"); // true
+document.write(checkTaskCondition(4), "<br>"); // Условие для задания не найдено.
+
+
+</script>
