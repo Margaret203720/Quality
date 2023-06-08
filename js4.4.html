@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>React Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="functionalComponent"></div>
+  <div id="classComponent"></div>
+  <div id="arrowComponent"></div>
+  
+  <script type="text/babel">
+    // Функциональный компонент
+    function MyFunctionalComponent() {
+      return <h1>Функционально задано</h1>;
+    }
+    
+    // Компонент, использующий классы ES6
+    class MyClassComponent extends React.Component {
+      render() {
+        return <h1>С помощью класса</h1>;
+      }
+    }
+    
+    // Компонент, использующий стрелочную функцию
+    const MyArrowComponent = () => {
+      return <h1>Стрелочной функцией</h1>;
+    }
+    
+    // Рендеринг компонентов
+    ReactDOM.render(<MyFunctionalComponent />, document.getElementById('functionalComponent'));
+    ReactDOM.render(<MyClassComponent />, document.getElementById('classComponent'));
+    ReactDOM.render(<MyArrowComponent />, document.getElementById('arrowComponent'));
+  </script>
+  <script type="text/babel">
+    class Timer extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { seconds: 0 };
+      }
+  
+      componentDidMount() {
+        this.timerID = setInterval(() => {
+          this.setState((prevState) => ({
+            seconds: prevState.seconds + 1
+          }));
+        }, 1000);
+      }
+  
+      componentWillUnmount() {
+        clearInterval(this.timerID);
+      }
+  
+      render() {
+        return <h1>Таймер: {this.state.seconds}</h1>;
+      }
+    }
+  
+    ReactDOM.render(<Timer />, document.getElementById('root'));
+  </script>
+</body>
+</html>
