@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Сумма чисел из инпутов</title>
+</head>
+<body>
+  <h1>Даны N инпутов с классом .num и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id=”result”</h1>
+  <input type="text" class="num" />
+  <input type="text" class="num" />
+  <input type="text" class="num" />
+  <button onclick="calculateSum()">Получить сумму</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateSum() {
+      var inputs = document.getElementsByClassName('num');
+      var sum = 0;
+
+      for (var i = 0; i < inputs.length; i++) {
+        var num = parseInt(inputs[i].value);
+        if (!isNaN(num)) {
+          sum += num;
+        }
+      }
+
+      var resultParagraph = document.getElementById('result');
+      resultParagraph.textContent = 'Сумма: ' + sum;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Увеличение картинки</title>
+  <style>
+    /* Стили картинок */
+    .default-image {
+      width: 200px;
+      height: 200px;
+    }
+    .expanded-image {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.</h1>
+  <div>
+    <img src="image1.jpg" alt="Картинка 1" class="default-image" onclick="expandImage(this)" />
+    <img src="image2.jpg" alt="Картинка 2" class="default-image" onclick="expandImage(this)" />
+  </div>
+
+  <script>
+    function expandImage(image) {
+      if (image.classList.contains('expanded-image')) {
+        image.classList.remove('expanded-image');
+      } else {
+        image.classList.add('expanded-image');
+      }
+    }
+  </script>
+</body>
+</html>

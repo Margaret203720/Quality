@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление стран в список</title>
+</head>
+<body>
+    <p>В инпут через запятую вводятся страны. По нажатию на кнопку сделайте так, чтобы эти страны записались в ul под инпутом (каждая страна отдельный li)</p>
+  <input type="text" id="countryInput">
+  <button onclick="addCountries()">Добавить страны</button>
+  <ul id="countryList"></ul>
+
+  <script>
+    function addCountries() {
+      var input = document.getElementById('countryInput');
+      var countryList = document.getElementById('countryList');
+
+      // Получаем значение из инпута и разделяем его по запятой
+      var countries = input.value.split(',');
+
+      // Очищаем значение инпута
+      input.value = '';
+
+      // Добавляем каждую страну в список ul
+      countries.forEach(function(country) {
+        // Создаем новый элемент li
+        var listItem = document.createElement('li');
+
+        // Устанавливаем текст для элемента li
+        listItem.textContent = country.trim();
+
+        // Добавляем элемент li в список ul
+        countryList.appendChild(listItem);
+      });
+    }
+  </script>
+</body>
+</html>

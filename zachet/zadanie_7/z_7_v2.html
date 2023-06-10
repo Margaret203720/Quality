@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        a {
+            color: blue;
+        }
+ 
+        a.selected {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a>Первая ссылка</a>
+    <a>Вторая ссылка</a>
+    <a>Третья ссылка</a>
+    <p id="result"></p>
+    <script>
+        for (let a of document.querySelectorAll("a"))
+            a.onclick = a_click;
+ 
+        function a_click(event) {
+            event.preventDefault();
+            let selected = document.querySelector("a.selected");
+            if (this === selected) return;
+            if (selected) selected.classList.remove("selected");
+            this.classList.add("selected");
+            document.getElementById("result").textContent = this.textContent;
+        }
+    </script>
+</body>
+</html>
