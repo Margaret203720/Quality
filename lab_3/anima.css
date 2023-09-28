@@ -1,0 +1,161 @@
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 600px;
+  background-color: #d1cee0;
+}
+
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+
+.trunk {
+  position: relative;
+  width: 10px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+  width: 5px;
+  transform-origin: bottom center;
+}
+
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+
+.branch:nth-child(1) {
+  top: 180px;
+  height: 180px;
+}
+
+.branch:nth-child(2) {
+  top: 160px;
+  height: 150px;
+}
+
+.branch:nth-child(3) {
+  top: 120px;
+  height: 150px;
+}
+
+.branch:nth-child(4) {
+  top: 100px;
+  height: 130px;
+}
+
+.branch:nth-child(5) {
+  top: 80px;
+  height: 110px;
+}
+
+.branch:nth-child(6) {
+  top: 60px;
+  height: 90px;
+}
+
+.branch:nth-child(7) {
+  top: 40px;
+  height: 70px;
+}
+
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #77ed9e, #53ad71);
+}
+
+.leaf:nth-child(1) {
+  top: 5px;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+}
+.leaf:nth-child(3) {
+  top: 35px;
+}
+.leaf:nth-child(4) {
+  top: 50px;
+}
+.leaf:nth-child(5) {
+  top: 70px;
+}
+.leaf:nth-child(6) {
+  top: 85px;
+}
+.leaf:nth-child(7) {
+  top: 100px;
+}
+
+.apple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 75% 75% 75% 75%;
+  background: linear-gradient(to right, #CD5C5C, #B22222);
+}
+
+.apple:nth-child(1) {
+  top: 5px;
+}
+.apple:nth-child(2) {
+  top: 35px;
+}
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes leaf-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+}
+.leaf:nth-child(even) {  
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+.leaf:nth-child(1) {
+  top: 5px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+  animation-delay: 3s;
+}
+.leaf:nth-child(3) {
+  top: 50px;
+  animation-delay: 2.5s;
+}
